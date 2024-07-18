@@ -1,0 +1,18 @@
+<!-- core/templates/core/listing_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listing Detail</title>
+</head>
+<body>
+    <h1>Listing Detail</h1>
+    <p>Title: {{ listing.title }}</p>
+    <p>Description: {{ listing.description }}</p>
+    <p>Location: {{ listing.location }}</p>
+    <p>Price: ${{ listing.price }}</p>
+    <p>Created at: {{ listing.created_at }}</p>
+    <p>Updated at: {{ listing.updated_at }}</p>
+    <p>Owner: {{ listing.owner.username }}</p>
+</body>
+</html>
