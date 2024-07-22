@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Listings</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    <ul>
+        {% for listing in listings %}
+            <li>
+                <a href="{% url 'listing-detail' listing.pk %}">{{ listing.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
