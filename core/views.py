@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
@@ -63,3 +64,7 @@ def search_listings(request):
     else:
         listings = Listing.objects.all()  # Or handle the case where there's no query
     return render(request, 'core/search_results.html', {'listings': listings})
+
+def some_view(request):
+    # Example response
+    return HTTPResponse("This is the admin view.")

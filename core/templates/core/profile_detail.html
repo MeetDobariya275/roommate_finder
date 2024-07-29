@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile Detail</title>
-</head>
-<body>
+{% extends 'core/base.html' %}
+
+{% block title %}Profile Detail{% endblock %}
+
+{% block content %}
     <h1>{{ profile.user.username }}</h1>
     <p>{{ profile.bio }}</p>
     <p>Location: {{ profile.location }}</p>
     <p>Phone: {{ profile.phone }}</p>
     <a href="{% url 'edit-profile' %}">Edit Profile</a>
-</body>
-</html>
+{% endblock %}

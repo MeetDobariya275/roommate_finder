@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Apartments</title>
-    <!-- Include your CSS here -->
-</head>
-<body>
+{% extends 'core/base.html' %}
+
+{% block title %}Search Apartments{% endblock %}
+
+{% block content %}
     <header>
         <h1>Apartment Finder</h1>
         <nav>
-            <!-- Add navigation links if needed -->
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'search_listings' %}">Search</a>
+            <a href="{% url 'search-listings' %}">Search</a>
         </nav>
     </header>
 
     <main>
         <section>
             <h2>Search for Apartments</h2>
-            <form method="get" action="{% url 'search_listings' %}">
+            <form method="get" action="{% url 'search-listings' %}">
                 <input type="text" name="q" placeholder="Search by title" value="{{ request.GET.q }}">
                 <button type="submit">Search</button>
             </form>
@@ -32,7 +27,7 @@
                 <ul>
                     {% for listing in listings %}
                         <li>
-                            <h3><a href="{% url 'listing_detail' listing.id %}">{{ listing.title }}</a></h3>
+                            <h3><a href="{% url 'listing-detail' listing.id %}">{{ listing.title }}</a></h3>
                             <p>{{ listing.description }}</p>
                             <p>Price: ${{ listing.price }}</p>
                         </li>
@@ -45,10 +40,6 @@
     </main>
 
     <footer>
-        <!-- Add footer content if needed -->
         <p>&copy; 2024 Apartment Finder</p>
     </footer>
-
-    <!-- Include your JavaScript here -->
-</body>
-</html>
+{% endblock %}
