@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from .forms import UserRegistrationForm, ListingForm, ProfileForm
 from .models import Profile, Listing
+from django.contrib.auth import logout
 
 def register(request):
     if request.method == 'POST':
@@ -40,6 +41,10 @@ def listing_detail(request, listing_id):
 def homepage_view(request):
     return render(request, 'core/home.html')
 
+def logout_view(request):
+    logout(request)
+    return render(request, 'core/logout.html')
+
 @login_required
 def edit_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
@@ -51,7 +56,8 @@ def edit_profile(request):
     else:
         form = ProfileForm(instance=profile)
     return render(request, 'core/edit_profile.html', {'form': form})
-
+    
+@login_required
 def profile_detail(request, username):
     profile = get_object_or_404(Profile, user__username=username)
     context = {'profile': profile}
@@ -66,5 +72,4 @@ def search_listings(request):
     return render(request, 'core/search_results.html', {'listings': listings})
 
 def some_view(request):
-    # Example response
     return HTTPResponse("This is the admin view.")
