@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-<your-secret-key-here>'
 DEBUG = False
 
 # Define allowed hosts
-ALLOWED_HOSTS = ['roommate_finder.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['ApartmentAtISA.onrender.com', 'localhost']
 
 
 # Application definition
