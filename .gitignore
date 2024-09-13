@@ -170,7 +170,7 @@ __pycache__/
 !staticfiles/
 
 # Ignore static and media files (optional)
-static/
+!static/
 media/
 
 # Ignore IDE-specific files
