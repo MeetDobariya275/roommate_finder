@@ -55,7 +55,7 @@ ROOT_URLCONF = 'roommate_finder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Adjust this if you have a custom templates directory
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # Adjust this if you have a custom templates directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
