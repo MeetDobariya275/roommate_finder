@@ -109,6 +109,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+*.egg-info/
+
 
 # Spyder project settings
 .spyderproject
@@ -149,3 +151,33 @@ $RECYCLE.BIN/
 
 # Ignore JetBrains project files
 .idea/
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore Django migrations (optional, but often useful)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Ignore compiled files like object files and libraries
+*.o
+*.so
+*.log
+
+# Ignore collected static files
+staticfiles/
+
+# Ignore static and media files (optional)
+static/
+media/
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+.DS_Store
+Thumbs.db
