@@ -167,7 +167,7 @@ __pycache__/
 *.log
 
 # Ignore collected static files
-staticfiles/
+!staticfiles/
 
 # Ignore static and media files (optional)
 static/
