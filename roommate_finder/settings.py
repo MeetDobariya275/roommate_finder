@@ -112,6 +112,7 @@ USE_TZ = True
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = 'home'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 
 # Static files (CSS, JavaScript, Images)
