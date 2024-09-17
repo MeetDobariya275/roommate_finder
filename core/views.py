@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login
 from .forms import UserRegistrationForm, ListingForm, ProfileForm
 from .models import Profile, Listing
 from django.contrib.auth import logout
+from django.contrib.auth import login
+from django.shortcuts import redirect
 
 def register(request):
     if request.method == 'POST':
